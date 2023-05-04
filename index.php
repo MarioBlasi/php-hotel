@@ -1,6 +1,5 @@
 <?php
- 
-    $hotels =[
+    $hotels = [
 
         [
             'name' => 'Hotel Belvedere',
@@ -37,8 +36,7 @@
             'vote' => 2,
             'distance_to_center' => 50
         ],
-      ];
- 
+    ]
 ?>
 
 <!DOCTYPE html>
@@ -58,18 +56,39 @@
 </head>
 <body >
 
-<div class="container pt-5">
-    <div class="row  d-flex justify-content-center ">
-      <?php foreach ($hotels as $hotel):?>
-        <div class="col shadow p-3">
-          <h2 class="card-title shadow p-3"><?php echo $hotel['name']; ?></h2><br>
-          <p class="card-text p-2"><b>desciption:</b>  <?php echo $hotel['description']; ?></p><br>
-          <p class="card-title"> <b>parking available: </b> <font color="red"><?php echo $hotel['parking'] ? 'Yes' : 'No'; ?> </font color="red"></p><br>
-          <p class="card-title"> <b>vote:</b>  <?php echo $hotel['vote']; ?></p><br>
-          <p class="card-title"> <b>distance to center:</b>  <?php echo $hotel['distance_to_center'];?> <u>Km</u> </p><br>
+    <div class="container pt-5">
+      <h1  class="d-flex justify-content-center p-2">HOTELS</h1>
+      <br>
+      <div class="container p-3">
+        <div class="row">
+          <div class="col shadow p-3">
+            <form action="script.php" method="get" >
+                  <div>
+                      <label for="parking-filter" class="form-label"><h3>Search Hotels with Parking</h3> </label>
+                      <select class="form-select" id="parking-filter" name="parking-filter">
+                          <option value="all">All Hotels</option>
+                          <option value="yes">Hotels with Parking</option>
+                          <option value="no">Hotels without Parking</option>
+                      </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary mt-3">Apply Filter</button>
+              </form>
+
+          </div>
         </div>
-      <?php endforeach; ?>
-    </div>
+      </div>
+      <div class="row  d-flex justify-content-center ">
+        <?php foreach ($hotels as $hotel):?>
+          <div class="col shadow p-3">
+            <h2 class="card-title shadow p-3"><?php echo $hotel['name']; ?></h2><br>
+            <p class="card-text p-2"><b>desciption:</b>  <?php echo $hotel['description']; ?></p><br>
+            <p class="card-title"> <b>parking available: </b> <font color="red"><?php echo $hotel['parking'] ? 'Yes' : 'No'; ?> </font color="red"></p><br>
+            <p class="card-title"> <b>vote:</b>  <?php echo $hotel['vote']; ?></p><br>
+            <p class="card-title"> <b>distance to center:</b>  <?php echo $hotel['distance_to_center'];?> <u>Km</u> </p><br>
+          </div>
+        <?php endforeach; ?>
+      
+      </div>
    </div>
     
 </body>
