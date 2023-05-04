@@ -37,7 +37,14 @@
             'distance_to_center' => 50
         ],
       ];
-
+    //   foreach ($hotels as $hotel) {
+    //     if ($hotel['parking']) {
+    //         echo $hotel['name'] . " ha il parcheggio.<br>";
+    //     } else {
+    //         echo $hotel['name'] . " non ha il parcheggio.<br>";
+    //     }
+    // }
+    //  var_dump($hotels);
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +65,7 @@
 <body >
 
     <div class="container pt-5">
-      <h1  class="d-flex justify-content-center p-2">HOTELS</h1>
+      <h1  class="d-flex justify-content-center p-2 shadow">HOTELS</h1>
       <br>
       <div class="container p-3">
         <div class="row">
