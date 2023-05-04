@@ -37,14 +37,7 @@
             'distance_to_center' => 50
         ],
       ];
-    //   foreach ($hotels as $hotel) {
-    //     if ($hotel['parking']) {
-    //         echo $hotel['name'] . " ha il parcheggio.<br>";
-    //     } else {
-    //         echo $hotel['name'] . " non ha il parcheggio.<br>";
-    //     }
-    // }
-    //  var_dump($hotels);
+
 ?>
 
 <!DOCTYPE html>
