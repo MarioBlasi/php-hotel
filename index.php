@@ -70,7 +70,7 @@
       <div class="container p-3">
         <div class="row">
             <div class="col shadow p-3">
-                <form action="script.php" method="POST">
+                <form  method="GET">
                     <div>
                         <label for="parking-filter" class="form-label"><h3>Search Hotels with Parking</h3></label>
                         <select class="form-select" id="parking-filter" name="parking-filter">
@@ -84,12 +84,29 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-3">Apply Filter</button>
                 </form>
+                <!-- hotel parking -->
+              <div class="col mt-5">
+                <form  method="GET" >
+                  <div>
+                    <label for="vote-filter" class="form-label"><h3 >Search Hotels stars</h3></label>
+                    <select class="form-select" id="vote-filter" name="vote-filter">
+                        <option value="all">All Hotels</option>
+                        <?php foreach ($hotels as $hotel): ?>
+                            <?php if ($hotel['vote']): ?>
+                                <option value="<?php echo $hotel['vote']; ?>">Hotels with vote - <?php echo $hotel['vote'] . ' --> ' . $hotel['name']; ?></option>
+                            <?php else: ?>
+                                <option value="<?php echo $hotel['vote']; ?>">Hotels without vote - <?php echo $hotel['vote'] . ' --> ' . $hotel['name']; ?></option>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </select>
+                  </div>
+                </form>
+                <!-- hotel vote -->
             </div>
         </div>
     </div>
-      <div class="row  d-flex justify-content-center ">
+      <div class="row  d-flex justify-content-center mt-5">
         <?php foreach ($hotels as $hotel):?>
           <div class="col shadow p-3">
             <h2 class="card-title shadow p-3"><?php echo $hotel['name']; ?></h2><br>
