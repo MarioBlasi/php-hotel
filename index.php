@@ -38,12 +38,9 @@
             'distance_to_center' => 50
         ],
       ];
-      $hotels = array($hotels);
-      foreach($hotels as $hotel){
-    
-    }
+ 
       
-    var_dump($hotels);
+    // var_dump($hotels);
 ?>
 
 <!DOCTYPE html>
@@ -65,61 +62,21 @@
 
 <div class="container pt-5">
     <div class="row d-flex justify-content-center">
-        <div class="col-8 shadow p-5">
-        <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">name</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-  </tbody>
-</table>
-
+        <div class="col-10 shadow p-5">
+       
+          <?php foreach ($hotels as $hotel)?>
+          <h3 class="card-title"><?php echo $hotel['name']; ?></h3><br>
+          <p class="card-text"><?php echo $hotel['description']; ?></p><br>
+          <p class="card-title"><?php echo $hotel['parking']; ?></p><br>
+          <p class="card-title"><?php echo $hotel['vote']; ?></p><br>
+          <p class="card-title"><?php echo $hotel['distance_to_center']; 
+               
+            // var_dump($hotels);
+          ?></p><br>
+        </div>
+    
+    </div>
+   </div>
     
 </body>
 </html>
