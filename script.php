@@ -1,7 +1,4 @@
 
-/*//funzione array_filter accetta un array come 
-argomento e una funzione callback che definisce le condizioni per il filtro.
-*/
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +18,31 @@ argomento e una funzione callback che definisce le condizioni per il filtro.
 <div class="container pt-5">
     <div class="row d-flex justify-content-center">
         <div class="col-8 shadow-lg p-5">
-        
-              
+         
+            <?php
+            var_dump($hotel);
+
+                // $paragrafo = $_GET["paragrafo"];
+                // $censura = $_GET["censura"];
+
+                // echo "<h1>Il tuo paragrafo è:</h1>";
+                // $str = $paragrafo;
+                // $length = strlen($str);
+                // echo "<h4> $paragrafo </h4>";
+                // echo "<p><i>la lunghezza del paragrafo è:</i></p>";
+                // echo "<b> $length </b> ";
+                // //paragrafo
+
+                // echo "<h1>la parola censurata:</h1>";
+                // $str = $censura;
+                // $length = strlen($str);
+                // echo "<h4> $censura </h4>";
+                // echo "<h4>$***</h4>";
+
+                // echo "<p><i>la lunghezza della parola censurata è:</i></p>";
+                // echo "<b> $length </b> "
+                // censura
+            ?>
         </div>
     </div>
   </div>

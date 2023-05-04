@@ -36,7 +36,15 @@
             'vote' => 2,
             'distance_to_center' => 50
         ],
-    ]
+      ];
+    //   foreach ($hotels as $hotel) {
+    //     if ($hotel['parking']) {
+    //         echo $hotel['name'] . " ha il parcheggio.<br>";
+    //     } else {
+    //         echo $hotel['name'] . " non ha il parcheggio.<br>";
+    //     }
+    // }
+    //  var_dump($hotels);
 ?>
 
 <!DOCTYPE html>
@@ -61,22 +69,26 @@
       <br>
       <div class="container p-3">
         <div class="row">
-          <div class="col shadow p-3">
-            <form action="script.php" method="get" >
-                  <div>
-                      <label for="parking-filter" class="form-label"><h3>Search Hotels with Parking</h3> </label>
-                      <select class="form-select" id="parking-filter" name="parking-filter">
-                          <option value="all">All Hotels</option>
-                          <option value="yes">Hotels with Parking</option>
-                          <option value="no">Hotels without Parking</option>
-                      </select>
-                  </div>
-                  <button type="submit" class="btn btn-primary mt-3">Apply Filter</button>
-              </form>
-
-          </div>
+            <div class="col shadow p-3">
+                <form action="script.php" method="POST">
+                    <div>
+                        <label for="parking-filter" class="form-label"><h3>Search Hotels with Parking</h3></label>
+                        <select class="form-select" id="parking-filter" name="parking-filter">
+                            <option value="all">All Hotels</option>
+                            <?php foreach ($hotels as $hotel): ?>
+                                <?php if ($hotel['parking']): ?>
+                                    <option value="<?php echo $hotel['name']; ?>">Hotels with Parking - <?php echo $hotel['name']; ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $hotel['name']; ?>">Hotels without Parking - <?php echo $hotel['name']; ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Apply Filter</button>
+                </form>
+            </div>
         </div>
-      </div>
+    </div>
       <div class="row  d-flex justify-content-center ">
         <?php foreach ($hotels as $hotel):?>
           <div class="col shadow p-3">
